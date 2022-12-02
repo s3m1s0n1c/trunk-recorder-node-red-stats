@@ -1,6 +1,6 @@
 [
     {
-        "id": "c55ef8e5cb1cd840",
+        "id": "10a60d33cf23c091",
         "type": "tab",
         "label": "Sonic - Trunk-Recorder Call Stats",
         "disabled": false,
@@ -8,9 +8,9 @@
         "env": []
     },
     {
-        "id": "75f9a41dc3745c8d",
+        "id": "cc32975a6d51224b",
         "type": "mqtt in",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Get Data from MQTT",
         "topic": "sonic/feeds/#",
         "qos": "0",
@@ -20,19 +20,19 @@
         "rap": false,
         "rh": "0",
         "inputs": 0,
-        "x": 140,
-        "y": 140,
+        "x": 220,
+        "y": 200,
         "wires": [
             [
-                "880d295cf86772cb",
-                "4dea3ac0b641d1a9"
+                "b5f7f9413a8ba657",
+                "d7f3d193cd03f00e"
             ]
         ]
     },
     {
-        "id": "880d295cf86772cb",
+        "id": "b5f7f9413a8ba657",
         "type": "switch",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Parse Topic Data",
         "property": "topic",
         "propertyType": "msg",
@@ -51,26 +51,26 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 370,
-        "y": 320,
+        "x": 450,
+        "y": 300,
         "wires": [
             [
-                "b477c44db652f212",
-                "254cde9cd34d689d",
-                "725b2f0958ff48b6",
-                "ccdce0ac5924dab0",
-                "7483c6370b25ebfd",
-                "088951723c49e2b7",
-                "4e7c7ead59f12b60",
-                "a10e95002ffd5642"
+                "ad0f42531254699d",
+                "b46a2afd5efa88c7",
+                "738a1526dd24ef57",
+                "a133f576941145cd",
+                "20d708e3ed88bfd8",
+                "cab26d8ab9f9d9bd",
+                "5ce11df8a9c707af",
+                "542d6754dfc761b6"
             ],
             []
         ]
     },
     {
-        "id": "4dea3ac0b641d1a9",
+        "id": "d7f3d193cd03f00e",
         "type": "debug",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Payload Debug",
         "active": false,
         "tosidebar": true,
@@ -80,16 +80,16 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 160,
-        "y": 20,
+        "x": 280,
+        "y": 80,
         "wires": []
     },
     {
-        "id": "b477c44db652f212",
+        "id": "ad0f42531254699d",
         "type": "ui_chart",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Calls Per Min",
-        "group": "c19f5e4c71d12984",
+        "group": "aaf5a4fda890d65b",
         "order": 1,
         "width": 15,
         "height": 12,
@@ -122,8 +122,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 730,
-        "y": 140,
+        "x": 850,
+        "y": 200,
         "wires": [
             []
         ],
@@ -132,11 +132,11 @@
         ]
     },
     {
-        "id": "254cde9cd34d689d",
+        "id": "b46a2afd5efa88c7",
         "type": "ui_gauge",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "",
-        "group": "c19f5e4c71d12984",
+        "group": "aaf5a4fda890d65b",
         "order": 2,
         "width": 15,
         "height": 10,
@@ -154,15 +154,15 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 710,
-        "y": 260,
+        "x": 830,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "f576e25cdf0e82e2",
+        "id": "3860caa19631706c",
         "type": "ui_text",
-        "z": "c55ef8e5cb1cd840",
-        "group": "c19f5e4c71d12984",
+        "z": "10a60d33cf23c091",
+        "group": "aaf5a4fda890d65b",
         "order": 5,
         "width": 5,
         "height": 1,
@@ -171,53 +171,53 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 970,
-        "y": 440,
+        "x": 770,
+        "y": 500,
         "wires": []
     },
     {
-        "id": "09a2ec4093daea38",
+        "id": "699083447b23c032",
         "type": "function",
-        "z": "c55ef8e5cb1cd840",
-        "name": "",
+        "z": "10a60d33cf23c091",
+        "name": "Max Value Display",
         "func": "msg.payload = msg.payload + \" Calls Per Min\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nmsg.payload = \"0 Calls Per Min\"",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 440,
-        "wires": [
-            [
-                "f576e25cdf0e82e2"
-            ]
-        ]
-    },
-    {
-        "id": "0c7276e2f77e45c4",
-        "type": "function",
-        "z": "c55ef8e5cb1cd840",
-        "name": "",
-        "func": "msg.payload = msg.payload + \" Calls Per Min\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 780,
+        "x": 590,
         "y": 500,
         "wires": [
             [
-                "ff287233d146b8ad"
+                "3860caa19631706c"
             ]
         ]
     },
     {
-        "id": "ff287233d146b8ad",
+        "id": "689669f3bd2805f6",
+        "type": "function",
+        "z": "10a60d33cf23c091",
+        "name": "Min Value Display",
+        "func": "msg.payload = msg.payload + \" Calls Per Min\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nmsg.payload = \"0 Calls Per Min\"",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 560,
+        "wires": [
+            [
+                "14de250f03c132ce"
+            ]
+        ]
+    },
+    {
+        "id": "14de250f03c132ce",
         "type": "ui_text",
-        "z": "c55ef8e5cb1cd840",
-        "group": "c19f5e4c71d12984",
+        "z": "10a60d33cf23c091",
+        "group": "aaf5a4fda890d65b",
         "order": 3,
         "width": 5,
         "height": 1,
@@ -226,15 +226,15 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 980,
-        "y": 500,
+        "x": 760,
+        "y": 560,
         "wires": []
     },
     {
-        "id": "ba88b3da3ed32b64",
+        "id": "6da4d54bc7f25ec2",
         "type": "ui_text",
-        "z": "c55ef8e5cb1cd840",
-        "group": "c19f5e4c71d12984",
+        "z": "10a60d33cf23c091",
+        "group": "aaf5a4fda890d65b",
         "order": 4,
         "width": 5,
         "height": 1,
@@ -243,35 +243,35 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 980,
-        "y": 600,
+        "x": 760,
+        "y": 620,
         "wires": []
     },
     {
-        "id": "0f0c412ebddad48c",
+        "id": "b18fc5d649d330e0",
         "type": "function",
-        "z": "c55ef8e5cb1cd840",
-        "name": "",
+        "z": "10a60d33cf23c091",
+        "name": "Avg Value Display",
         "func": "msg.payload = parseInt(msg.payload) + \" Calls Per Min\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nmsg.payload = \"0 Calls Per Min\"",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 600,
+        "x": 590,
+        "y": 620,
         "wires": [
             [
-                "ba88b3da3ed32b64"
+                "6da4d54bc7f25ec2"
             ]
         ]
     },
     {
-        "id": "725b2f0958ff48b6",
+        "id": "738a1526dd24ef57",
         "type": "ui_chart",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Calls Per Hour",
-        "group": "c19f5e4c71d12984",
+        "group": "aaf5a4fda890d65b",
         "order": 8,
         "width": 15,
         "height": 12,
@@ -304,8 +304,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 720,
-        "y": 180,
+        "x": 840,
+        "y": 240,
         "wires": [
             []
         ],
@@ -314,11 +314,11 @@
         ]
     },
     {
-        "id": "ccdce0ac5924dab0",
+        "id": "a133f576941145cd",
         "type": "ui_chart",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Calls Per Day",
-        "group": "c19f5e4c71d12984",
+        "group": "aaf5a4fda890d65b",
         "order": 7,
         "width": 15,
         "height": 12,
@@ -351,8 +351,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 720,
-        "y": 220,
+        "x": 840,
+        "y": 280,
         "wires": [
             []
         ],
@@ -361,63 +361,63 @@
         ]
     },
     {
-        "id": "4e7c7ead59f12b60",
+        "id": "5ce11df8a9c707af",
         "type": "calculate",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Calculate Avg Value",
         "pauseType": "timed",
         "calculation": "average",
         "timeout": "1",
         "timeoutUnits": "minutes",
         "rate": "10",
-        "x": 600,
-        "y": 600,
+        "x": 380,
+        "y": 620,
         "wires": [
             [
-                "0f0c412ebddad48c"
+                "b18fc5d649d330e0"
             ]
         ]
     },
     {
-        "id": "088951723c49e2b7",
+        "id": "cab26d8ab9f9d9bd",
         "type": "calculate",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Calculate Min Value",
         "pauseType": "timed",
         "calculation": "min",
         "timeout": "1",
         "timeoutUnits": "minutes",
         "rate": "10",
-        "x": 610,
-        "y": 500,
+        "x": 390,
+        "y": 560,
         "wires": [
             [
-                "0c7276e2f77e45c4"
+                "689669f3bd2805f6"
             ]
         ]
     },
     {
-        "id": "7483c6370b25ebfd",
+        "id": "20d708e3ed88bfd8",
         "type": "calculate",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Calculate Max Value",
         "pauseType": "timed",
         "calculation": "max",
         "timeout": "1",
         "timeoutUnits": "minutes",
         "rate": "10",
-        "x": 600,
-        "y": 440,
+        "x": 380,
+        "y": 500,
         "wires": [
             [
-                "09a2ec4093daea38"
+                "699083447b23c032"
             ]
         ]
     },
     {
-        "id": "a10e95002ffd5642",
+        "id": "542d6754dfc761b6",
         "type": "debug",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "Trunk-Recorder Calls Debug",
         "active": false,
         "tosidebar": true,
@@ -427,14 +427,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 600,
-        "y": 20,
+        "x": 720,
+        "y": 80,
         "wires": []
     },
     {
-        "id": "9dff92dce7a71bc8",
+        "id": "3b55c08e1a17e065",
         "type": "ui_spacer",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "spacer",
         "group": "281aea9e7dfe07df",
         "order": 6,
@@ -442,11 +442,11 @@
         "height": 1
     },
     {
-        "id": "602d31612d019057",
+        "id": "859032e03be4109b",
         "type": "ui_spacer",
-        "z": "c55ef8e5cb1cd840",
+        "z": "10a60d33cf23c091",
         "name": "spacer",
-        "group": "c19f5e4c71d12984",
+        "group": "aaf5a4fda890d65b",
         "order": 6,
         "width": 15,
         "height": 1
@@ -479,7 +479,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "c19f5e4c71d12984",
+        "id": "aaf5a4fda890d65b",
         "type": "ui_group",
         "name": "Trunk-Recorder Calls",
         "tab": "6dbc42e90c472b0c",
