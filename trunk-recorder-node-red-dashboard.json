@@ -21,7 +21,7 @@
         "rh": "0",
         "inputs": 0,
         "x": 140,
-        "y": 340,
+        "y": 140,
         "wires": [
             [
                 "880d295cf86772cb",
@@ -51,11 +51,10 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 410,
-        "y": 340,
+        "x": 370,
+        "y": 320,
         "wires": [
             [
-                "a10e95002ffd5642",
                 "b477c44db652f212",
                 "254cde9cd34d689d",
                 "725b2f0958ff48b6",
@@ -63,27 +62,10 @@
                 "7483c6370b25ebfd",
                 "088951723c49e2b7",
                 "4e7c7ead59f12b60",
-                "afb537517276a660"
+                "a10e95002ffd5642"
             ],
             []
         ]
-    },
-    {
-        "id": "a10e95002ffd5642",
-        "type": "debug",
-        "z": "c55ef8e5cb1cd840",
-        "name": "Trunk-Recorder Calls Debug",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 600,
-        "y": 20,
-        "wires": []
     },
     {
         "id": "4dea3ac0b641d1a9",
@@ -140,8 +122,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 650,
-        "y": 60,
+        "x": 730,
+        "y": 140,
         "wires": [
             []
         ],
@@ -172,8 +154,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 630,
-        "y": 180,
+        "x": 710,
+        "y": 260,
         "wires": []
     },
     {
@@ -189,8 +171,8 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1290,
-        "y": 260,
+        "x": 970,
+        "y": 440,
         "wires": []
     },
     {
@@ -204,12 +186,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1100,
-        "y": 260,
+        "x": 780,
+        "y": 440,
         "wires": [
             [
-                "f576e25cdf0e82e2",
-                "558f9e20edb7cfbe"
+                "f576e25cdf0e82e2"
             ]
         ]
     },
@@ -224,12 +205,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1100,
-        "y": 300,
+        "x": 780,
+        "y": 500,
         "wires": [
             [
-                "ff287233d146b8ad",
-                "558f9e20edb7cfbe"
+                "ff287233d146b8ad"
             ]
         ]
     },
@@ -246,8 +226,8 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1300,
-        "y": 300,
+        "x": 980,
+        "y": 500,
         "wires": []
     },
     {
@@ -263,8 +243,8 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 1300,
-        "y": 340,
+        "x": 980,
+        "y": 600,
         "wires": []
     },
     {
@@ -278,12 +258,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1100,
-        "y": 340,
+        "x": 780,
+        "y": 600,
         "wires": [
             [
-                "ba88b3da3ed32b64",
-                "558f9e20edb7cfbe"
+                "ba88b3da3ed32b64"
             ]
         ]
     },
@@ -325,8 +304,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 640,
-        "y": 100,
+        "x": 720,
+        "y": 180,
         "wires": [
             []
         ],
@@ -372,8 +351,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 640,
-        "y": 140,
+        "x": 720,
+        "y": 220,
         "wires": [
             []
         ],
@@ -385,18 +364,17 @@
         "id": "4e7c7ead59f12b60",
         "type": "calculate",
         "z": "c55ef8e5cb1cd840",
-        "name": "",
+        "name": "Calculate Avg Value",
         "pauseType": "timed",
         "calculation": "average",
         "timeout": "1",
         "timeoutUnits": "minutes",
         "rate": "10",
-        "x": 920,
-        "y": 340,
+        "x": 600,
+        "y": 600,
         "wires": [
             [
-                "0f0c412ebddad48c",
-                "c0cc2ac5e28033e6"
+                "0f0c412ebddad48c"
             ]
         ]
     },
@@ -404,18 +382,17 @@
         "id": "088951723c49e2b7",
         "type": "calculate",
         "z": "c55ef8e5cb1cd840",
-        "name": "",
+        "name": "Calculate Min Value",
         "pauseType": "timed",
         "calculation": "min",
         "timeout": "1",
         "timeoutUnits": "minutes",
         "rate": "10",
-        "x": 920,
-        "y": 300,
+        "x": 610,
+        "y": 500,
         "wires": [
             [
-                "0c7276e2f77e45c4",
-                "c0cc2ac5e28033e6"
+                "0c7276e2f77e45c4"
             ]
         ]
     },
@@ -423,67 +400,35 @@
         "id": "7483c6370b25ebfd",
         "type": "calculate",
         "z": "c55ef8e5cb1cd840",
-        "name": "",
+        "name": "Calculate Max Value",
         "pauseType": "timed",
         "calculation": "max",
         "timeout": "1",
-        "timeoutUnits": "seconds",
+        "timeoutUnits": "minutes",
         "rate": "10",
-        "x": 920,
-        "y": 260,
+        "x": 600,
+        "y": 440,
         "wires": [
             [
-                "09a2ec4093daea38",
-                "c0cc2ac5e28033e6"
+                "09a2ec4093daea38"
             ]
         ]
     },
     {
-        "id": "558f9e20edb7cfbe",
+        "id": "a10e95002ffd5642",
         "type": "debug",
         "z": "c55ef8e5cb1cd840",
-        "name": "debug 1",
+        "name": "Trunk-Recorder Calls Debug",
         "active": false,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
         "statusType": "auto",
-        "x": 1180,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "c0cc2ac5e28033e6",
-        "type": "debug",
-        "z": "c55ef8e5cb1cd840",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "afb537517276a660",
-        "type": "debug",
-        "z": "c55ef8e5cb1cd840",
-        "name": "debug 3",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 220,
+        "x": 600,
+        "y": 20,
         "wires": []
     },
     {
