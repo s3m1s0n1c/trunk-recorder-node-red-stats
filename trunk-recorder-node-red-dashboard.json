@@ -1,0 +1,530 @@
+[
+    {
+        "id": "556110c34d10701a",
+        "type": "tab",
+        "label": "Ryan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dcbff2d7e2bb4884",
+        "type": "mqtt in",
+        "z": "556110c34d10701a",
+        "name": "Get Data from MQTT",
+        "topic": "sonic/feeds/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "61de5090.0f5d9",
+        "nl": false,
+        "rap": false,
+        "rh": "0",
+        "inputs": 0,
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "eb234dd.f9905b",
+                "b62aac2f.1fdeb"
+            ]
+        ]
+    },
+    {
+        "id": "eb234dd.f9905b",
+        "type": "switch",
+        "z": "556110c34d10701a",
+        "name": "Parse Topic Data",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "sonic/feeds/calls",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sonic/feeds/calldata",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "b7ff394e.4bc4f8",
+                "45f7afa66b4a7e7d",
+                "af2edce88025483c",
+                "431d8693d4012750",
+                "b6723176ac0192e8",
+                "e461f2596c8b4971"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b7ff394e.4bc4f8",
+        "type": "debug",
+        "z": "556110c34d10701a",
+        "name": "Trunk-Recorder Calls Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "b62aac2f.1fdeb",
+        "type": "debug",
+        "z": "556110c34d10701a",
+        "name": "Payload Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 160,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "45f7afa66b4a7e7d",
+        "type": "ui_chart",
+        "z": "556110c34d10701a",
+        "name": "Calls Per Min",
+        "group": "281aea9e7dfe07df",
+        "order": 1,
+        "width": 15,
+        "height": 12,
+        "label": "Calls Per Min",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "Calls",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "inputLabels": [
+            "Calls"
+        ]
+    },
+    {
+        "id": "af2edce88025483c",
+        "type": "ui_gauge",
+        "z": "556110c34d10701a",
+        "name": "",
+        "group": "281aea9e7dfe07df",
+        "order": 2,
+        "width": 15,
+        "height": 10,
+        "gtype": "gage",
+        "title": "Current Call Rate",
+        "label": "Calls",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "20",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 630,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "21a5baf4b642b296",
+        "type": "ui_text",
+        "z": "556110c34d10701a",
+        "group": "281aea9e7dfe07df",
+        "order": 5,
+        "width": 5,
+        "height": 1,
+        "name": "value max",
+        "label": "Max:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1290,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "431d8693d4012750",
+        "type": "switch",
+        "z": "556110c34d10701a",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "max",
+                "vt": "flow"
+            },
+            {
+                "t": "lt",
+                "v": "min",
+                "vt": "flow"
+            },
+            {
+                "t": "lte",
+                "v": "avg",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "72b908ed0c592795"
+            ],
+            [
+                "54597e97461112c9"
+            ],
+            [
+                "aeb52c60f5783aaf"
+            ]
+        ]
+    },
+    {
+        "id": "2bb5c2bb5921893c",
+        "type": "function",
+        "z": "556110c34d10701a",
+        "name": "",
+        "func": "msg.payload = msg.payload + \" Calls Per Min\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 260,
+        "wires": [
+            [
+                "21a5baf4b642b296"
+            ]
+        ]
+    },
+    {
+        "id": "d0cfcdcecb58928c",
+        "type": "function",
+        "z": "556110c34d10701a",
+        "name": "",
+        "func": "msg.payload = msg.payload + \" Calls Per Min\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 300,
+        "wires": [
+            [
+                "e844c59d6c0f5d8a"
+            ]
+        ]
+    },
+    {
+        "id": "e844c59d6c0f5d8a",
+        "type": "ui_text",
+        "z": "556110c34d10701a",
+        "group": "281aea9e7dfe07df",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "name": "value min",
+        "label": "Min:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1300,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7781adbde2bc3b1a",
+        "type": "ui_text",
+        "z": "556110c34d10701a",
+        "group": "281aea9e7dfe07df",
+        "order": 4,
+        "width": 5,
+        "height": 1,
+        "name": "value avg",
+        "label": "Avg:  ",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1300,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f6e30511df18dd9e",
+        "type": "function",
+        "z": "556110c34d10701a",
+        "name": "",
+        "func": "\nmsg.payload = msg.payload + \" Calls Per Min\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 340,
+        "wires": [
+            [
+                "7781adbde2bc3b1a"
+            ]
+        ]
+    },
+    {
+        "id": "b6723176ac0192e8",
+        "type": "ui_chart",
+        "z": "556110c34d10701a",
+        "name": "Calls Per Hour",
+        "group": "281aea9e7dfe07df",
+        "order": 7,
+        "width": 15,
+        "height": 12,
+        "label": "Calls Per Hour",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "Calls",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "inputLabels": [
+            "Calls"
+        ]
+    },
+    {
+        "id": "e461f2596c8b4971",
+        "type": "ui_chart",
+        "z": "556110c34d10701a",
+        "name": "Calls Per Day",
+        "group": "281aea9e7dfe07df",
+        "order": 8,
+        "width": 15,
+        "height": 12,
+        "label": "Calls Per Day",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "Calls",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "inputLabels": [
+            "Calls"
+        ]
+    },
+    {
+        "id": "aeb52c60f5783aaf",
+        "type": "calculate",
+        "z": "556110c34d10701a",
+        "name": "",
+        "pauseType": "timed",
+        "calculation": "average",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "10",
+        "x": 920,
+        "y": 340,
+        "wires": [
+            [
+                "f6e30511df18dd9e"
+            ]
+        ]
+    },
+    {
+        "id": "54597e97461112c9",
+        "type": "calculate",
+        "z": "556110c34d10701a",
+        "name": "",
+        "pauseType": "timed",
+        "calculation": "min",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "10",
+        "x": 920,
+        "y": 300,
+        "wires": [
+            [
+                "d0cfcdcecb58928c"
+            ]
+        ]
+    },
+    {
+        "id": "72b908ed0c592795",
+        "type": "calculate",
+        "z": "556110c34d10701a",
+        "name": "",
+        "pauseType": "timed",
+        "calculation": "max",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "10",
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "2bb5c2bb5921893c"
+            ]
+        ]
+    },
+    {
+        "id": "b165a5f3916e40d9",
+        "type": "ui_spacer",
+        "z": "556110c34d10701a",
+        "name": "spacer",
+        "group": "281aea9e7dfe07df",
+        "order": 6,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "61de5090.0f5d9",
+        "type": "mqtt-broker",
+        "name": "Local MQTT Server",
+        "broker": "10.0.0.110",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "281aea9e7dfe07df",
+        "type": "ui_group",
+        "name": "Trunk-Recorder Calls",
+        "tab": "01832594a16af353",
+        "order": 1,
+        "disp": true,
+        "width": 30,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "01832594a16af353",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
