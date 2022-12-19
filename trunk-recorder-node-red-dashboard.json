@@ -1,6 +1,6 @@
 [
     {
-        "id": "10a60d33cf23c091",
+        "id": "72261bd1e60e1a5e",
         "type": "tab",
         "label": "Sonic - Trunk-Recorder Call Stats",
         "disabled": false,
@@ -8,89 +8,274 @@
         "env": []
     },
     {
-        "id": "cc32975a6d51224b",
+        "id": "b1d3900bef65d2bd",
+        "type": "tab",
+        "label": "Sonic - Trunk-Recorder Call Decode",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "61de5090.0f5d9",
+        "type": "mqtt-broker",
+        "name": "Local MQTT Server",
+        "broker": "10.0.0.110",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d6f4a626e386ce10",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "PSNSCAN.Com Stats",
+            "hideToolbar": "false",
+            "allowSwipe": "mouse",
+            "lockMenu": "true",
+            "allowTempTheme": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 1,
+                "cy": 1,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "abfe55af0b4b35df",
+        "type": "ui_group",
+        "name": "Trunk-Recorder Decode Rate",
+        "tab": "17abf982f867ca32",
+        "order": 2,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8a68fcc7fe9b56b5",
+        "type": "ui_spacer",
+        "z": "b1d3900bef65d2bd",
+        "name": "spacer",
+        "group": "e43821ee48cb1ff2",
+        "order": 6,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "f5a95c781464f7c1",
+        "type": "ui_spacer",
+        "z": "b1d3900bef65d2bd",
+        "name": "spacer",
+        "group": "abfe55af0b4b35df",
+        "order": 6,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "e43821ee48cb1ff2",
+        "type": "ui_group",
+        "name": "Trunk-Recorder Call Rate",
+        "tab": "12484c5a6d0d0af2",
+        "order": 1,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "17abf982f867ca32",
+        "type": "ui_tab",
+        "name": "Decode Rate",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "12484c5a6d0d0af2",
+        "type": "ui_tab",
+        "name": "Call Rate",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d68a705cf18a68a6",
         "type": "mqtt in",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Get Data from MQTT",
-        "topic": "sonic/feeds/#",
+        "topic": "nswpsn/#",
         "qos": "0",
         "datatype": "auto-detect",
         "broker": "61de5090.0f5d9",
         "nl": false,
         "rap": false,
-        "rh": "0",
+        "rh": "1",
         "inputs": 0,
         "x": 220,
         "y": 200,
         "wires": [
             [
-                "b5f7f9413a8ba657",
-                "d7f3d193cd03f00e"
+                "2864cac992c1f932",
+                "660ce59ad3c161b5"
             ]
         ]
     },
     {
-        "id": "b5f7f9413a8ba657",
+        "id": "2864cac992c1f932",
         "type": "switch",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Parse Topic Data",
         "property": "topic",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "sonic/feeds/calls",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "sonic/feeds/calldata",
+                "v": "nswpsn/calls",
                 "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 2,
+        "outputs": 1,
         "x": 450,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
-                "ad0f42531254699d",
-                "b46a2afd5efa88c7",
-                "738a1526dd24ef57",
-                "a133f576941145cd",
-                "20d708e3ed88bfd8",
-                "cab26d8ab9f9d9bd",
-                "5ce11df8a9c707af",
-                "542d6754dfc761b6"
-            ],
-            []
+                "e1b15ab2f8f9f061",
+                "23a42c5793ae212e",
+                "a092ebc6ba0950a8",
+                "55314d5513c07fa1",
+                "0c1346fae2728c85",
+                "a5f69ef9571cd37c",
+                "e6a5b5799371249f",
+                "9dfec6be0b94fd2a"
+            ]
         ]
     },
     {
-        "id": "d7f3d193cd03f00e",
+        "id": "660ce59ad3c161b5",
         "type": "debug",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Payload Debug",
         "active": false,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
+        "tostatus": true,
         "complete": "true",
         "targetType": "full",
-        "statusVal": "",
+        "statusVal": "payload",
         "statusType": "auto",
         "x": 280,
         "y": 80,
         "wires": []
     },
     {
-        "id": "ad0f42531254699d",
+        "id": "e1b15ab2f8f9f061",
         "type": "ui_chart",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Calls Per Min",
-        "group": "aaf5a4fda890d65b",
-        "order": 1,
+        "group": "e43821ee48cb1ff2",
+        "order": 2,
         "width": 15,
         "height": 12,
         "label": "Calls Per Min",
@@ -132,12 +317,12 @@
         ]
     },
     {
-        "id": "b46a2afd5efa88c7",
+        "id": "23a42c5793ae212e",
         "type": "ui_gauge",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "",
-        "group": "aaf5a4fda890d65b",
-        "order": 2,
+        "group": "e43821ee48cb1ff2",
+        "order": 1,
         "width": 15,
         "height": 10,
         "gtype": "gage",
@@ -159,10 +344,10 @@
         "wires": []
     },
     {
-        "id": "3860caa19631706c",
+        "id": "e719978abe924708",
         "type": "ui_text",
-        "z": "10a60d33cf23c091",
-        "group": "aaf5a4fda890d65b",
+        "z": "72261bd1e60e1a5e",
+        "group": "e43821ee48cb1ff2",
         "order": 5,
         "width": 5,
         "height": 1,
@@ -171,53 +356,53 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 770,
+        "x": 810,
         "y": 500,
         "wires": []
     },
     {
-        "id": "699083447b23c032",
+        "id": "061d2a4caf5b7d52",
         "type": "function",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Max Value Display",
         "func": "msg.payload = msg.payload + \" Calls Per Min\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nmsg.payload = \"0 Calls Per Min\"",
+        "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
+        "x": 610,
         "y": 500,
         "wires": [
             [
-                "3860caa19631706c"
+                "e719978abe924708"
             ]
         ]
     },
     {
-        "id": "689669f3bd2805f6",
+        "id": "59c2afe20ed1be2f",
         "type": "function",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Min Value Display",
         "func": "msg.payload = msg.payload + \" Calls Per Min\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nmsg.payload = \"0 Calls Per Min\"",
+        "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
+        "x": 610,
         "y": 560,
         "wires": [
             [
-                "14de250f03c132ce"
+                "715fadbaeab374a1"
             ]
         ]
     },
     {
-        "id": "14de250f03c132ce",
+        "id": "715fadbaeab374a1",
         "type": "ui_text",
-        "z": "10a60d33cf23c091",
-        "group": "aaf5a4fda890d65b",
+        "z": "72261bd1e60e1a5e",
+        "group": "e43821ee48cb1ff2",
         "order": 3,
         "width": 5,
         "height": 1,
@@ -226,15 +411,15 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 760,
+        "x": 800,
         "y": 560,
         "wires": []
     },
     {
-        "id": "6da4d54bc7f25ec2",
+        "id": "0fc5959d62a50b1b",
         "type": "ui_text",
-        "z": "10a60d33cf23c091",
-        "group": "aaf5a4fda890d65b",
+        "z": "72261bd1e60e1a5e",
+        "group": "e43821ee48cb1ff2",
         "order": 4,
         "width": 5,
         "height": 1,
@@ -243,36 +428,36 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 760,
+        "x": 800,
         "y": 620,
         "wires": []
     },
     {
-        "id": "b18fc5d649d330e0",
+        "id": "0e6bad862cf5d31e",
         "type": "function",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Avg Value Display",
         "func": "msg.payload = parseInt(msg.payload) + \" Calls Per Min\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nmsg.payload = \"0 Calls Per Min\"",
+        "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
+        "x": 610,
         "y": 620,
         "wires": [
             [
-                "6da4d54bc7f25ec2"
+                "0fc5959d62a50b1b"
             ]
         ]
     },
     {
-        "id": "738a1526dd24ef57",
+        "id": "a092ebc6ba0950a8",
         "type": "ui_chart",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Calls Per Hour",
-        "group": "aaf5a4fda890d65b",
-        "order": 8,
+        "group": "e43821ee48cb1ff2",
+        "order": 7,
         "width": 15,
         "height": 12,
         "label": "Calls Per Hour",
@@ -314,12 +499,12 @@
         ]
     },
     {
-        "id": "a133f576941145cd",
+        "id": "55314d5513c07fa1",
         "type": "ui_chart",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Calls Per Day",
-        "group": "aaf5a4fda890d65b",
-        "order": 7,
+        "group": "e43821ee48cb1ff2",
+        "order": 8,
         "width": 15,
         "height": 12,
         "label": "Calls Per Day",
@@ -361,9 +546,9 @@
         ]
     },
     {
-        "id": "5ce11df8a9c707af",
+        "id": "e6a5b5799371249f",
         "type": "calculate",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Calculate Avg Value",
         "pauseType": "timed",
         "calculation": "average",
@@ -374,14 +559,14 @@
         "y": 620,
         "wires": [
             [
-                "b18fc5d649d330e0"
+                "0e6bad862cf5d31e"
             ]
         ]
     },
     {
-        "id": "cab26d8ab9f9d9bd",
+        "id": "a5f69ef9571cd37c",
         "type": "calculate",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Calculate Min Value",
         "pauseType": "timed",
         "calculation": "min",
@@ -392,14 +577,14 @@
         "y": 560,
         "wires": [
             [
-                "689669f3bd2805f6"
+                "59c2afe20ed1be2f"
             ]
         ]
     },
     {
-        "id": "20d708e3ed88bfd8",
+        "id": "0c1346fae2728c85",
         "type": "calculate",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Calculate Max Value",
         "pauseType": "timed",
         "calculation": "max",
@@ -410,14 +595,14 @@
         "y": 500,
         "wires": [
             [
-                "699083447b23c032"
+                "061d2a4caf5b7d52"
             ]
         ]
     },
     {
-        "id": "542d6754dfc761b6",
+        "id": "9dfec6be0b94fd2a",
         "type": "debug",
-        "z": "10a60d33cf23c091",
+        "z": "72261bd1e60e1a5e",
         "name": "Trunk-Recorder Calls Debug",
         "active": false,
         "tosidebar": true,
@@ -432,70 +617,458 @@
         "wires": []
     },
     {
-        "id": "3b55c08e1a17e065",
-        "type": "ui_spacer",
-        "z": "10a60d33cf23c091",
-        "name": "spacer",
-        "group": "281aea9e7dfe07df",
-        "order": 6,
-        "width": 15,
-        "height": 1
+        "id": "4a764014c65ad243",
+        "type": "mqtt in",
+        "z": "b1d3900bef65d2bd",
+        "name": "Get Data from MQTT",
+        "topic": "nswpsn/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "61de5090.0f5d9",
+        "nl": false,
+        "rap": false,
+        "rh": "1",
+        "inputs": 0,
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "7e015d5eaf945563",
+                "9db971e78d2038b0"
+            ]
+        ]
     },
     {
-        "id": "859032e03be4109b",
-        "type": "ui_spacer",
-        "z": "10a60d33cf23c091",
-        "name": "spacer",
-        "group": "aaf5a4fda890d65b",
-        "order": 6,
-        "width": 15,
-        "height": 1
+        "id": "7e015d5eaf945563",
+        "type": "switch",
+        "z": "b1d3900bef65d2bd",
+        "name": "Parse Topic Data",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "nswpsn/decode",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 280,
+        "wires": [
+            [
+                "bc9b2f86c992bb7e",
+                "c2a2349dfac9137c"
+            ]
+        ]
     },
     {
-        "id": "61de5090.0f5d9",
-        "type": "mqtt-broker",
-        "name": "Local MQTT Server",
-        "broker": "10.0.0.110",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "5",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "true",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
+        "id": "9db971e78d2038b0",
+        "type": "debug",
+        "z": "b1d3900bef65d2bd",
+        "name": "Payload Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 300,
+        "y": 80,
+        "wires": []
     },
     {
-        "id": "aaf5a4fda890d65b",
-        "type": "ui_group",
-        "name": "Trunk-Recorder Calls",
-        "tab": "6dbc42e90c472b0c",
-        "order": 1,
-        "disp": true,
-        "width": 30,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "6dbc42e90c472b0c",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
+        "id": "013d7c0b4da7372a",
+        "type": "ui_chart",
+        "z": "b1d3900bef65d2bd",
+        "name": "Decode Rate Per Min",
+        "group": "abfe55af0b4b35df",
         "order": 2,
-        "disabled": false,
-        "hidden": false
+        "width": 15,
+        "height": 12,
+        "label": "Decode Rate Per Min",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "Rate",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1040,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "inputLabels": [
+            "Calls"
+        ]
+    },
+    {
+        "id": "e396aecaf99e14d1",
+        "type": "ui_gauge",
+        "z": "b1d3900bef65d2bd",
+        "name": "",
+        "group": "abfe55af0b4b35df",
+        "order": 1,
+        "width": "15",
+        "height": "10",
+        "gtype": "gage",
+        "title": "Current Decode Rate",
+        "label": "Rate",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1000,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "08471b6108ac4d31",
+        "type": "ui_text",
+        "z": "b1d3900bef65d2bd",
+        "group": "abfe55af0b4b35df",
+        "order": 5,
+        "width": 5,
+        "height": 1,
+        "name": "value max",
+        "label": "Max:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 830,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "093836b41df8c991",
+        "type": "function",
+        "z": "b1d3900bef65d2bd",
+        "name": "Max Value Display",
+        "func": "msg.payload = msg.payload + \" Decode Rate Per Min\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 500,
+        "wires": [
+            [
+                "08471b6108ac4d31"
+            ]
+        ]
+    },
+    {
+        "id": "5e6064e3d6ec05f9",
+        "type": "function",
+        "z": "b1d3900bef65d2bd",
+        "name": "Min Value Display",
+        "func": "msg.payload = msg.payload + \" Decode Rate Per Min\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 560,
+        "wires": [
+            [
+                "fb6a1af823cb0d76"
+            ]
+        ]
+    },
+    {
+        "id": "fb6a1af823cb0d76",
+        "type": "ui_text",
+        "z": "b1d3900bef65d2bd",
+        "group": "abfe55af0b4b35df",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "name": "value min",
+        "label": "Min:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 820,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "892d307e5b9a0a3b",
+        "type": "ui_text",
+        "z": "b1d3900bef65d2bd",
+        "group": "abfe55af0b4b35df",
+        "order": 4,
+        "width": 5,
+        "height": 1,
+        "name": "value avg",
+        "label": "Avg:  ",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 820,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "bc756813e1015c00",
+        "type": "function",
+        "z": "b1d3900bef65d2bd",
+        "name": "Avg Value Display",
+        "func": "msg.payload = parseInt(msg.payload) + \" Decode Rate Per Min\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 620,
+        "wires": [
+            [
+                "892d307e5b9a0a3b"
+            ]
+        ]
+    },
+    {
+        "id": "54856b4960e13e0b",
+        "type": "ui_chart",
+        "z": "b1d3900bef65d2bd",
+        "name": "Decode Rate Per Hour",
+        "group": "abfe55af0b4b35df",
+        "order": 7,
+        "width": 15,
+        "height": 12,
+        "label": "Decode Rate Per Hour",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "Rate",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1020,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "inputLabels": [
+            "Calls"
+        ]
+    },
+    {
+        "id": "7b8e98273649fd94",
+        "type": "ui_chart",
+        "z": "b1d3900bef65d2bd",
+        "name": "Decode Rate Per Day",
+        "group": "abfe55af0b4b35df",
+        "order": 8,
+        "width": 15,
+        "height": 12,
+        "label": "Decode Rate Per Day",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "Rate",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1020,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "inputLabels": [
+            "Calls"
+        ]
+    },
+    {
+        "id": "66f9287c3ed2842c",
+        "type": "calculate",
+        "z": "b1d3900bef65d2bd",
+        "name": "Calculate Avg Value",
+        "pauseType": "timed",
+        "calculation": "average",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "10",
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "bc756813e1015c00"
+            ]
+        ]
+    },
+    {
+        "id": "1cf216453de95e6f",
+        "type": "calculate",
+        "z": "b1d3900bef65d2bd",
+        "name": "Calculate Min Value",
+        "pauseType": "timed",
+        "calculation": "min",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "10",
+        "x": 410,
+        "y": 560,
+        "wires": [
+            [
+                "5e6064e3d6ec05f9"
+            ]
+        ]
+    },
+    {
+        "id": "08c27326baba51f3",
+        "type": "calculate",
+        "z": "b1d3900bef65d2bd",
+        "name": "Calculate Max Value",
+        "pauseType": "timed",
+        "calculation": "max",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "10",
+        "x": 400,
+        "y": 500,
+        "wires": [
+            [
+                "093836b41df8c991"
+            ]
+        ]
+    },
+    {
+        "id": "bc9b2f86c992bb7e",
+        "type": "debug",
+        "z": "b1d3900bef65d2bd",
+        "name": "Trunk-Recorder Calls Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 720,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "50ef1e6ac243640a",
+        "type": "debug",
+        "z": "b1d3900bef65d2bd",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "c2a2349dfac9137c",
+        "type": "function",
+        "z": "b1d3900bef65d2bd",
+        "name": "Get DecodeRate",
+        "func": "\n// Set the value of the name property of the second object as the msg.payload\nmsg.payload = msg.payload[\"\"].decoderate\n\n// Output the msg.payload\nreturn msg; \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 240,
+        "wires": [
+            [
+                "50ef1e6ac243640a",
+                "013d7c0b4da7372a",
+                "54856b4960e13e0b",
+                "7b8e98273649fd94",
+                "e396aecaf99e14d1",
+                "08c27326baba51f3",
+                "1cf216453de95e6f",
+                "66f9287c3ed2842c"
+            ]
+        ]
     }
 ]
