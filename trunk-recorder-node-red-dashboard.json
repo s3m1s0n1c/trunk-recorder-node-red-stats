@@ -90,8 +90,8 @@
         "id": "61de5090.0f5d9",
         "type": "mqtt-broker",
         "name": "Local MQTT Server",
-        "broker": "10.0.0.108",
-        "port": "1888",
+        "broker": "Enter IP of MQTT Server",
+        "port": "1883",
         "clientid": "",
         "autoConnect": true,
         "usetls": false,
@@ -2087,7 +2087,7 @@
         "type": "mqtt in",
         "z": "1e2812b14e080ea5",
         "name": "",
-        "topic": "nswpsn/#",
+        "topic": "Enter MQTT Topic/#",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "61de5090.0f5d9",
@@ -2095,7 +2095,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 180,
+        "x": 210,
         "y": 180,
         "wires": [
             [
