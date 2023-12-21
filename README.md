@@ -10,6 +10,7 @@ Node-Red connects to MQTT Broker Server and displays stats on Dashboard
   
 * Change Topic in 'MQTT' node to reflect correct topic you are sending in mqtt plugin
 
+See [images](https://github.com/s3m1s0n1c/trunk-recorder-node-red-stats/images) folder for examples of each tab on the dashboard.
 
 Demo site @ https://status.psnscan.com/
 
