@@ -1,4 +1,4 @@
-This is a Node-Red Dashboard for Trunk-Recorder calls via the trunk-recorder-mqtt-statistics plugin
+This is a Node-Red Dashboard for Trunk-Recorder calls via @Taclane's [trunk-recorder-mqtt-status](https://github.com/taclane/trunk-recorder-mqtt-status) plugin
 
 Trunk-Recorder sends stats to MQTT Broker Server via plugin
 Node-Red connects to MQTT Broker Server and displays stats on Dashboard
