@@ -9,3 +9,6 @@ Node-Red connects to MQTT Broker Server and displays stats on Dashboard
 * Change IP of MQTT Broker
   
 * Change Topic in 'MQTT' node to reflect correct topic you are sending in mqtt plugin
+
+
+Demo site @ https://status.psnscan.com/
