@@ -1,14 +1,17 @@
-This is a Node-Red Dashboard for Trunk-Recorder calls via @Taclane's [trunk-recorder-mqtt-status](https://github.com/taclane/trunk-recorder-mqtt-status) plugin
+A Node-Red Dashboard for Trunk-Recorder calls via MQTT
 
-Trunk-Recorder sends stats to MQTT Broker Server via plugin
-Node-Red connects to MQTT Broker Server and displays stats on Dashboard
+This project is fork of @Taclane's [trunk-recorder-mqtt-node](https://github.com/taclane/trunk-recorder-mqtt-node) which recieves data sent from Trunk-Recorder via @Taclane's [trunk-recorder-mqtt-status](https://github.com/taclane/trunk-recorder-mqtt-status) plugin
 
-Setup information is in [Wiki](https://github.com/s3m1s0n1c/trunk-recorder-node-red-stats/wiki)
+I have added my own twist on it and added a few other functions onto it.
 
+Setup information is in the [Wiki](https://github.com/s3m1s0n1c/trunk-recorder-node-red-stats/wiki)
 
 See [images](https://github.com/s3m1s0n1c/trunk-recorder-node-red-stats/images) folder for examples of each tab on the dashboard.
 
 Demo site @ https://status.psnscan.com/
+
+If you have any issues please raise an ***Issue*** via the Issues Tab
+
 
 ------------------------------------------------------------------------
 
