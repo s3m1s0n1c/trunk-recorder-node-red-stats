@@ -1,6 +1,6 @@
 A Node-Red Dashboard for Trunk-Recorder calls via MQTT
 
-This project is fork of @Taclane's [trunk-recorder-mqtt-node](https://github.com/taclane/trunk-recorder-mqtt-node) which recieves data sent from Trunk-Recorder via @Taclane's [trunk-recorder-mqtt-status](https://github.com/taclane/trunk-recorder-mqtt-status) plugin
+This project is fork of @Taclane's [trunk-recorder-mqtt-node](https://github.com/taclane/trunk-recorder-mqtt-node) which recieves MQTT Data sent from Trunk-Recorder via @Taclane's [trunk-recorder-mqtt-status](https://github.com/taclane/trunk-recorder-mqtt-status) plugin to a MQTT Server
 
 I have added my own twist on it and added a few other functions onto it.
 
